@@ -4,8 +4,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 ### Environment Set up
-1 - Copy *.env.example* file with *.env* name
-2 - Create public key via weatherapi.com and add .env file
+- Copy *.env.example* file with *.env* name
+- Create a public key via weatherapi.com and add .env file
 
 
 First, run the development server:
