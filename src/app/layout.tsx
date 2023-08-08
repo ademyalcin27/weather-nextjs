@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${poppins.className} h-full`}>
       <body className='h-full' suppressHydrationWarning={true}>
-        <div className='bg-cover bg-gradient-to-r from-blue-500 to-blue-300 h-fit h-full'>
+        <div className='bg-cover bg-gradient-to-r from-red-500 to-red-300 h-fit h-full'>
           {children}
         </div>
       </body>
