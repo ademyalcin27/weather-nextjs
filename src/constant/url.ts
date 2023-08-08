@@ -1,0 +1,1 @@
+export const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${process.env.NEXT_PUBLIC_APP_WEATHER_KEY}&days=7&aqi=yes&alerts=yes`;
