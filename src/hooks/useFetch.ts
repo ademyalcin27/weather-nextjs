@@ -16,7 +16,7 @@ export default function useDataFetching<T>(url: string, options = {}) {
        }
         setData(snakeCaseToCamelCase(json));
       } catch (error) {
-        setError(error);
+        setError(error as Error);
       } finally {
         setLoading(false);
       }
