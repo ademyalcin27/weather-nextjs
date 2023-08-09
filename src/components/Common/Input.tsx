@@ -3,11 +3,17 @@ import SearchIcon from "@mui/icons-material/Search";
 import {styles} from "./Input.module";
 
 interface InputProps {
-  handleSearch: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+  handleSearch: () => void;
   setLocation: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const Input = ({ handleSearch, setLocation }: InputProps) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      handleSearch()
+    }
+  }
   return (
     <form className={styles.form}>   
       <label htmlFor="search" className={styles.label}>Search</label>
@@ -18,10 +24,10 @@ const Input = ({ handleSearch, setLocation }: InputProps) => {
           <input 
               type="search" 
               id="search" 
-              onKeyDown={handleSearch}
+              onKeyDown={handleKeyDown}
               onChange={(e) => setLocation(e.target.value)} 
               className={styles.input} placeholder="Search" required />
-          <button type="submit" className={styles.button}>Search</button>
+          <button type="button" className={styles.button} onClick={() => handleSearch()}>Search</button>
       </div>
   </form>
   )

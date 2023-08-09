@@ -13,13 +13,7 @@ export default function Home() {
 
   const url = `${API_URL}&q=${location}`;
   const { data, error,loading, fetchData } = useDataFetching<Weather>(url)
-  const handleSearch = async (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      fetchData()
-    }
-  };
-
+ 
   function renderContent(data: Weather) {
     return (
       <div className="flex md:flex-row flex-col p-12 items-center justify-between mt-[-4rem] gap-10">
@@ -40,7 +34,7 @@ export default function Home() {
   return (
     <div className="bg-white/25 w-full rounded-lg flex flex-col h-fit">
       <div className="flex flex-col md:flex-row justify-between items-center p-12">
-        <Input handleSearch={handleSearch} setLocation={setLocation} />
+        <Input handleSearch={() => fetchData()} setLocation={setLocation} />
         <h1 className="mb-8 md:mb-0 order-1 text-white text-2xl py-2 px-4 rounded-xl italic font-bold">
           Weather App.
         </h1>
